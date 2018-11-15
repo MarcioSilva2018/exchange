@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<!--
+    Copyright (c) 2012-2016 Adobe Systems Incorporated. All rights reserved.
+
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />
+    <!-- Good default declaration:
+    * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+    * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+    * Disables use of eval() and inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+        * Enable inline JS: add 'unsafe-inline' to default-src
+        * Enable eval(): add 'unsafe-eval' to default-src
+    * Create your own at http://cspisawesome.com
+    -->
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" /> -->
+
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <title>Exchange Converter</title>
+    <script language="JavaScript">
+
+function euroConverter(){
+var http = newXMLHttpRequest();
+const url= 'http://www.apilayer.net/api/live?access_key=295fa4ae6b0ad82f2deec9e1a75a6eda';
+http.open("GET", url);
+http.send();
+}
+function dollarConverter(){
+var http = newXMLHttpRequest();
+const url= 'http://www.apilayer.net/api/live?access_key=295fa4ae6b0ad82f2deec9e1a75a6eda';
+http.open("GET", url);
+http.send();
+}
+function poundConverter(){
+var http = newXMLHttpRequest();
+const url= 'http://www.apilayer.net/api/live?access_key=295fa4ae6b0ad82f2deec9e1a75a6eda';
+http.open("GET", url);
+http.send();
+}
+
+
+</script>
+</head>
+
+<body>
+     <div class="app">
+    <nav class="navbar navbar-default">
+		<div class="container-fluid">
+			
+		</div>
+	</nav>
+	<div class="col-md-3"></div>
+	<div class="col-md-6 well">
+		<h3 class="text-primary">Currency Converter</h3>
+		<hr style="border-top:1px dotted #ccc;">
+		<div class="col-md-2"></div>
+		<div class="col-md-8">
+			<h4>Converter</h4>
+			<hr style="border-top:1px groovy #ccc;"/>
+			<form name="converter">
+<table border="0">
+<tr>
+<td>Euro: </td><td><input type="text" name="euro" onChange="euroConverter()" /></td>
+</tr>
+<tr>
+<td>US Dollar: </td><td><input type="text" name="dollar" onChange="dollarConverter()" /></td>
+</tr>
+<tr>
+<td>British Pound:</td><td><input type="text" name="pound" onChange="poundConverter()" /></td>
+</tr>
+<tr>
+<td colspan="2" align="center"><input type="button" value="Convert!" /></td>
+</tr>
+</table>
+</form>
+	</div>
+   
+
+
+   
+       
+        <div id="deviceready" class="blink">
+            <p class="event listening"></p>
+            <p class="event received"></p>
+        </div>
+    </div>
+    
+    
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript">
+        app.initialize();
+    </script>
+ 
+</body>
+
+</html>
